@@ -2,6 +2,7 @@
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
+import { SignInButton } from './auth-buttons';
 
 export function NavMenu({
   className,
@@ -13,8 +14,14 @@ export function NavMenu({
       {...props}
     >
       <Link
-        href="/about"
+        href="/"
         className="text-sm font-medium transition-colors hover:text-primary"
+      >
+        Home
+      </Link>
+      <Link
+        href="/about"
+        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
       >
         About
       </Link>
@@ -24,12 +31,7 @@ export function NavMenu({
       >
         Blog
       </Link>
-      <Link
-        href="/users"
-        className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
-      >
-        Users
-      </Link>
+      <SignInButton />
     </nav>
   );
 }
